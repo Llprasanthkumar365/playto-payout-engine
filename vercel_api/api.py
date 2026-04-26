@@ -33,6 +33,9 @@ def handler(request):
         }
     })
 
+# For Vercel Python runtime - must be named 'handler'
+handler = handler
+
 # For Vercel Python runtime
 def main(request, context):
     return handler(request)
