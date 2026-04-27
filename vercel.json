@@ -1,15 +1,11 @@
 {
   "builds": [
     {
-      "src": "vercel_api/api.py",
-      "use": "@vercel/python"
+      "src": "index.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/vercel_api/api.py"
-    },
     {
       "src": "/(.*)",
       "dest": "/index.html"
