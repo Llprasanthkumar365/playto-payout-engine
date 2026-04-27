@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playto Payout Engine - Live Demo</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8fafc; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .container { max-width: 600px; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        h1 { color: #1e293b; margin-bottom: 0.5rem; font-size: 1.75rem; }
+        .subtitle { color: #64748b; margin-bottom: 2rem; }
+        .status { display: inline-block; padding: 0.25rem 0.75rem; background: #dcfce7; color: #166534; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; margin-bottom: 1.5rem; }
+        .endpoints { background: #f1f5f9; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
+        .endpoints h3 { color: #334155; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .endpoint { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; font-family: monospace; font-size: 0.875rem; }
+        .method { padding: 0.25rem 0.5rem; background: #3b82f6; color: white; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+        .method.post { background: #22c55e; }
+        .method.get { background: #3b82f6; }
+        .path { color: #475569; }
+        .info { color: #64748b; font-size: 0.875rem; line-height: 1.6; }
+        .info p { margin-bottom: 0.75rem; }
+        .github-link { display: inline-block; margin-top: 1rem; color: #3b82f6; text-decoration: none; }
+        .github-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="status">✓ Live</span>
+        <h1>Playto Payout Engine</h1>
+        <p class="subtitle">Cross-border payment infrastructure for Indian businesses</p>
+        
+        <div class="endpoints">
+            <h3>API Endpoints</h3>
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <span class="path">/api/v1/merchants</span>
+            </div>
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <span class="path">/api/v1/merchants/:id/balance</span>
+            </div>
+            <div class="endpoint">
+                <span class="method post">POST</span>
+                <span class="path">/api/v1/payouts</span>
+            </div>
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <span class="path">/api/v1/payouts?merchant_id=:id</span>
+            </div>
+            <div class="endpoint">
+                <span class="method post">POST</span>
+                <span class="path">/api/seed</span>
+            </div>
+        </div>
+        
+        <div class="info">
+            <p><strong>Features implemented:</strong></p>
+            <p>• Money integrity: BigInteger in paise, database-level SQL aggregation<br>
+            • Concurrency: select_for_update() with row-level locking<br>
+            • Idempotency: Keys scoped per merchant, 24h expiry<br>
+            • State machine: Enforced in Payout.save() - blocks illegal transitions<br>
+            • Retry logic: 30s timeout, exponential backoff, max 3 attempts</p>
+        </div>
+        
+        <a class="github-link" href="https://github.com/Llprasanthkumar365/playto-payout-engine">View on GitHub →</a>
+    </div>
+</body>
+</html>

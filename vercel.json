@@ -12,7 +12,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/vercel_api/api.py"
+      "dest": "/index.html"
     }
   ]
 }
